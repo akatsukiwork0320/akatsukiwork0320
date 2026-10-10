@@ -4,6 +4,12 @@ I work on reproducible correctness and performance studies for AI inference, num
 
 ## Authored pull requests
 
+### SGLang — public weight offloader API
+
+[PR #43603](https://github.com/sgl-project/sglang/pull/43603) · **Open; awaiting review; not merged** (status checked 2026-10-11).
+
+Adds a public offloader factory and post-load hook for plugin-defined weight placement before KV-cache sizing and CUDA Graph capture. Validation includes 45 CPU tests and single-L4 checks with Qwen3-0.6B. In the tested batch-size-1 decode-graph configuration, plugin and native offloading matched parameter placement, KV capacity, token IDs, and log probabilities. The PR documents validation limits and AI assistance.
+
 ### SGLang — public weight-update refusal
 
 [PR #43597](https://github.com/sgl-project/sglang/pull/43597) · **Open; awaiting review; not merged** (status checked 2026-10-11).
