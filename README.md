@@ -2,6 +2,14 @@
 
 I work on reproducible correctness and performance studies for AI inference, numerical software, and stateful systems. My work focuses on explicit assumptions, controlled comparisons, and evidence that others can rerun.
 
+## Authored pull requests
+
+### SGLang — public weight-update refusal
+
+[PR #43597](https://github.com/sgl-project/sglang/pull/43597) · **Open; awaiting review; not merged** (status checked 2026-10-11).
+
+Adds a public way for models and plugins to refuse unsupported online weight updates, with checks across selected runners before mutation. Validation includes 31 CPU component tests and a live-server check with Qwen3-0.6B on one NVIDIA L4. Generation continued after each tested refusal; the PR documents untested configurations and AI assistance.
+
 ## Selected upstream reports and reviews
 
 *Status checked on 2026-10-11. These entries describe my reports and review contributions, not PRs authored by me.*
