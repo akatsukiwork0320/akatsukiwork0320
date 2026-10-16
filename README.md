@@ -1,9 +1,9 @@
 # Satoshi Kawasaki
 
-**Independent researcher and research software engineer.** I build reproducible evaluations, proposed fixes, and verification tools that support decisions on research and critical software:
+**Independent researcher and research software engineer focused on AI safety evaluation.** I build reproducible evaluations, proposed fixes, and verification tools that support decisions on research and critical software:
 
-- **Ethereum & ZK infrastructure** — [Optimism `#23334`](https://github.com/ethereum-optimism/optimism/pull/23334), [SP1 `#2950`](https://github.com/succinctlabs/sp1/issues/2950#issuecomment-6114284554), [Tycho `#1486`](https://github.com/propeller-heads/tycho/pull/1486#issuecomment-6090912403), [revm `#3833`](https://github.com/bluealloy/revm/pull/3833#issuecomment-6090083437)
 - **AI safety & evaluation benchmarks** — [UK AISI ControlArena `#899`](https://github.com/UKGovernmentBEIS/control-arena/pull/899#issuecomment-6142961607) · [`#907`](https://github.com/UKGovernmentBEIS/control-arena/issues/907#issuecomment-6207150903), [Manifund `funding-bench` `#1`](https://github.com/manifund/funding-bench/pull/1)
+- **Ethereum & ZK infrastructure** — [Optimism `#23334`](https://github.com/ethereum-optimism/optimism/pull/23334), [SP1 `#2950`](https://github.com/succinctlabs/sp1/issues/2950#issuecomment-6114284554), [Tycho `#1486`](https://github.com/propeller-heads/tycho/pull/1486#issuecomment-6090912403), [revm `#3833`](https://github.com/bluealloy/revm/pull/3833#issuecomment-6090083437)
 - **Systems biology & scientific computing** — [Tellurium `#611`](https://github.com/sys-bio/tellurium/pull/611) · [`#612`](https://github.com/sys-bio/tellurium/pull/612), [Diffrax `#787`](https://github.com/patrick-kidger/diffrax/pull/787), [HiGHS `#3387`](https://github.com/ERGO-Code/HiGHS/issues/3387)
 - **C++ / Rust / GPU systems** — [SGLang `#42850`](https://github.com/sgl-project/sglang/pull/42850#issuecomment-6068696152), [Kokkos `#9122`](https://github.com/kokkos/kokkos/pull/9122#issuecomment-6139445264), [LLVM `#214016`](https://github.com/llvm/llvm-project/pull/214016#issuecomment-6118429105)
 
@@ -11,6 +11,12 @@ Open to research grants, collaborations, and scoped engineering contracts. Corpo
 
 [Discuss a project](https://mikoto-style.co.jp/en/contact.php) · [Research and evidence](https://mikoto-style.co.jp/en/research/) · [Company GitHub](https://github.com/mikoto0320) · [ORCID](https://orcid.org/0009-0000-9146-6399)
 
+## AI safety: selected reports and independent validation
+
+These are reports and tests contributed to other authors' work, not PRs authored by me (checked 2026-10-16).
+
+- **[ControlArena: AI-control input-validator pilot](https://github.com/UKGovernmentBEIS/control-arena/pull/899#issuecomment-6142961607)** ([reproducibility package](https://github.com/akatsukiwork0320/control-arena-validator-pilot-repro)) — Offline audit of 24 stored backdoor inputs across 10 sampled problems in an AI-control evaluation benchmark. One conflicted with a stated constraint also violated by two recorded test inputs: an unresolved specification/data conflict, not a confirmed scoring error. The audit was offline and did not implement sandbox isolation or test live attacks or scorer integration.
+- **[ControlArena: `swe_django` side-test behavioral probe](https://github.com/UKGovernmentBEIS/control-arena/issues/907#issuecomment-6207150903)** ([reproducibility package](https://github.com/akatsukiwork0320/control-arena-907-swebench-probe)) — Local `pytest` probe of reconstructed `base`/`gold`/mutated Django functions for two reported inverted side-task tests (`15103` and `16661`), identifying an `or`-joined JSON/Python `\u0026` decoding tautology in `15103` that accepts both escaped and unescaped output, and documenting baseline vs. mutation behavior on `16661`. Did not run SWE-bench Docker containers, the full main-task suite, or ControlArena's evaluation pipeline.
 ## Selected authored pull requests
 
 ### Ethereum infrastructure
@@ -37,12 +43,10 @@ Open to research grants, collaborations, and scoped engineering contracts. Corpo
 
 All seven PRs linked in this section are **open and not merged**, checked 2026-10-16. The linked PRs document implementation details and validation limits.
 
-## Selected reports and independent validation
+## Other selected reports and independent validation
 
 These are reports and tests contributed to other authors' work, not PRs authored by me (checked 2026-10-16).
 
-- **[ControlArena: AI-control input-validator pilot](https://github.com/UKGovernmentBEIS/control-arena/pull/899#issuecomment-6142961607)** ([reproducibility package](https://github.com/akatsukiwork0320/control-arena-validator-pilot-repro)) — Offline audit of 24 stored backdoor inputs across 10 sampled problems in an AI-control evaluation benchmark. One conflicted with a stated constraint also violated by two recorded test inputs: an unresolved specification/data conflict, not a confirmed scoring error. The audit was offline and did not implement sandbox isolation or test live attacks or scorer integration.
-- **[ControlArena: `swe_django` side-test behavioral probe](https://github.com/UKGovernmentBEIS/control-arena/issues/907#issuecomment-6207150903)** ([reproducibility package](https://github.com/akatsukiwork0320/control-arena-907-swebench-probe)) — Local `pytest` probe of reconstructed `base`/`gold`/mutated Django functions for two reported inverted side-task tests (`15103` and `16661`), identifying an `or`-joined JSON/Python `\u0026` decoding tautology in `15103` that accepts both escaped and unescaped output, and documenting baseline vs. mutation behavior on `16661`. Did not run SWE-bench Docker containers, the full main-task suite, or ControlArena's evaluation pipeline.
 - **[HiGHS: incorrect optimality result](https://github.com/ERGO-Code/HiGHS/issues/3387)** — Reported a small MIP with an exact optimum of 1 where the tested solver reported 0. A maintainer confirmed the bug on `latest` and opened [PR #3408](https://github.com/ERGO-Code/HiGHS/pull/3408) (open); my [source-build comparison](https://github.com/ERGO-Code/HiGHS/pull/3408#issuecomment-6152858701) verified the proposed fix on the original and redundant-row examples. Exact feasibility checks of returned solutions covered the original reproducer cases.
 - **[SGLang: speculative sampling kernel reduction](https://github.com/sgl-project/sglang/pull/42850#issuecomment-6068696152)** — Synthetic-kernel measurements on one RTX 3070 identified ~23 µs of extra reduction work at batch size 1 on common paths; the **PR author incorporated the proposed branch guard** ([response](https://github.com/sgl-project/sglang/pull/42850#issuecomment-6082827978), upstream PR open). Not an end-to-end serving benchmark.
 - **[Kokkos: host-side C++ Event race reproduction](https://github.com/kokkos/kokkos/pull/9122#issuecomment-6139445264)** — Reproduced a host-side C++ `Serial` ThreadSanitizer data race on the portable `Experimental::Event` fallback across Clang and GCC, and diagnosed three Jenkins CI/NVCC build failures.
