@@ -1,6 +1,11 @@
 # Satoshi Kawasaki
 
-**Independent researcher and research software engineer.** I build reproducible evaluations, proposed fixes, and verification tools for Ethereum and ZK infrastructure, AI and funding benchmarks, and scientific computing.
+**Independent researcher and research software engineer.** I build reproducible evaluations, proposed fixes, and verification tools that support decisions on research and critical software:
+
+- **Ethereum & ZK infrastructure** — [Optimism `#23334`](https://github.com/ethereum-optimism/optimism/pull/23334), [SP1 `#2950`](https://github.com/succinctlabs/sp1/issues/2950#issuecomment-6114284554), [Tycho `#1486`](https://github.com/propeller-heads/tycho/pull/1486#issuecomment-6090912403), [C1 replay demo](https://github.com/akatsukiwork0320/c1-synthetic-review-demo)
+- **AI safety & evaluation benchmarks** — [UK AISI ControlArena `#899`](https://github.com/UKGovernmentBEIS/control-arena/pull/899#issuecomment-6142961607), [Manifund `funding-bench` `#1`](https://github.com/manifund/funding-bench/pull/1)
+- **Systems biology & scientific computing** — [Tellurium `#611`](https://github.com/sys-bio/tellurium/pull/611) · [`#612`](https://github.com/sys-bio/tellurium/pull/612), [Diffrax `#787`](https://github.com/patrick-kidger/diffrax/pull/787), [HiGHS `#3387`](https://github.com/ERGO-Code/HiGHS/issues/3387)
+- **C++ / Rust / GPU systems** — [SGLang `#42850`](https://github.com/sgl-project/sglang/pull/42850#issuecomment-6068696152), [Kokkos `#9122`](https://github.com/kokkos/kokkos/pull/9122#issuecomment-6139445264), [LLVM `#214016`](https://github.com/llvm/llvm-project/pull/214016#issuecomment-6118429105)
 
 Open to research grants, collaborations, and scoped engineering contracts. Corporate contracting is available through [MIKOTO Co., Ltd.](https://mikoto-style.co.jp/en/).
 
@@ -12,13 +17,13 @@ Open to research grants, collaborations, and scoped engineering contracts. Corpo
 
 **[Optimism (`op-reth`) #23334](https://github.com/ethereum-optimism/optimism/pull/23334)** (fixes [#22501](https://github.com/ethereum-optimism/optimism/issues/22501)) — Proposed a fix and regression tests for historical proofs returning current-state data after unwinds and subsequent appends. A maintainer independently reproduced the bug, stated that the fix looks correct in a [commented review](https://github.com/ethereum-optimism/optimism/pull/23334#pullrequestreview-5488507484), and opened [#23341](https://github.com/ethereum-optimism/optimism/pull/23341) for a separate store-repair subcommand; formal approval is still pending. Local validation passed 822 tests across 17 packages; repairing previously corrupted history is separate work.
 
-### Evaluation and funding benchmarks
+### AI evaluation and funding benchmarks
 
 **[Manifund `funding-bench` #1](https://github.com/manifund/funding-bench/pull/1)** — Built an offline diagnostic and unit tests comparing how proposal attribution and scoring windows affect a synthetic Timaeus prediction. Production scoring and data are unchanged; this demonstrates sensitivity to the assumptions, not an improvement in actual funding decisions or model rankings.
 
-### Scientific computing
+### Systems biology and scientific computing
 
-**[Tellurium #611](https://github.com/sys-bio/tellurium/pull/611) · [#612](https://github.com/sys-bio/tellurium/pull/612)** (fixes [#604](https://github.com/sys-bio/tellurium/issues/604), [#603](https://github.com/sys-bio/tellurium/issues/603)) — Proposed fixes for order-dependent SED-ML model initialization and repeated tasks overwriting standalone simulation outputs. Regressions cover XML ordering, the reported simulation, nested tasks, and both fixes applied together.
+**[Tellurium #611](https://github.com/sys-bio/tellurium/pull/611) · [#612](https://github.com/sys-bio/tellurium/pull/612)** (fixes [#604](https://github.com/sys-bio/tellurium/issues/604), [#603](https://github.com/sys-bio/tellurium/issues/603)) — Proposed Python fixes for SBML/SED-ML biochemical network simulation workflows: preventing order-dependent model initialization from resetting parameter changes and preventing repeated tasks from overwriting standalone simulation outputs. Regressions cover XML ordering, the reported pathway simulation, nested tasks, and both fixes applied together.
 
 **[Diffrax #787](https://github.com/patrick-kidger/diffrax/pull/787)** (fixes [#707](https://github.com/patrick-kidger/diffrax/issues/707)) — Added construction-time checks for Brownian-path shapes to reject unsuitable static metadata before JIT tracing. Selected tests cover accepted NumPy integer dimensions and rejected array/tracer inputs; these are regression checks, not a complete statistical validation of the solvers.
 
@@ -36,9 +41,11 @@ All seven PRs linked in this section are **open and not merged**, checked 2026-1
 
 These are reports and tests contributed to other authors' work, not PRs authored by me (checked 2026-10-16).
 
+- **[ControlArena: AI-control input-validator pilot](https://github.com/UKGovernmentBEIS/control-arena/pull/899#issuecomment-6142961607)** — Offline audit of 24 stored backdoor inputs across 10 sampled problems in an AI-control evaluation benchmark. One conflicted with a stated constraint also violated by two recorded test inputs: an unresolved specification/data conflict, not a confirmed scoring error. The audit was offline and did not implement sandbox isolation or test live attacks or scorer integration.
 - **[HiGHS: incorrect optimality result](https://github.com/ERGO-Code/HiGHS/issues/3387)** — Reported a small MIP with an exact optimum of 1 where the tested solver reported 0. A maintainer confirmed the bug on `latest` and opened [PR #3408](https://github.com/ERGO-Code/HiGHS/pull/3408) (open); my [source-build comparison](https://github.com/ERGO-Code/HiGHS/pull/3408#issuecomment-6152858701) verified the proposed fix on the original and redundant-row examples. Exact feasibility checks of returned solutions covered the original reproducer cases.
-- **[ControlArena: input-validator pilot](https://github.com/UKGovernmentBEIS/control-arena/pull/899#issuecomment-6142961607)** — Audited 24 stored backdoor inputs across 10 sampled problems. One conflicted with a stated constraint also violated by two recorded test inputs: an unresolved specification/data conflict, not a confirmed scoring error. The audit was offline and did not test live attacks or scorer integration.
 - **[SGLang: speculative sampling kernel reduction](https://github.com/sgl-project/sglang/pull/42850#issuecomment-6068696152)** — Synthetic-kernel measurements on one RTX 3070 identified ~23 µs of extra reduction work at batch size 1 on common paths; the **PR author incorporated the proposed branch guard** ([response](https://github.com/sgl-project/sglang/pull/42850#issuecomment-6082827978), upstream PR open). Not an end-to-end serving benchmark.
+- **[Kokkos: host-side C++ Event race reproduction](https://github.com/kokkos/kokkos/pull/9122#issuecomment-6139445264)** — Reproduced a host-side C++ `Serial` ThreadSanitizer data race on the portable `Experimental::Event` fallback across Clang and GCC, and diagnosed three Jenkins CI/NVCC build failures.
+- **[LLVM: `ExtTSP` code-layout differential testing](https://github.com/llvm/llvm-project/pull/214016#issuecomment-6118429105)** — Differential tests across 2,001 synthetic CFGs and an 8-node exact-enumeration witness showing near-tie layout changes in `mergeChainPairs`; no generated-code runtime measurement.
 - **[SP1: GPU worker failure propagation](https://github.com/succinctlabs/sp1/issues/2950#issuecomment-6114284554)** — On one L40S, reproduced allocation panics and a client waiting until a configured 15-minute limit. Tested an existing development-branch error-handling approach on a pinned `main` build; clients then received terminal errors. OOM prevention and foreign-exception aborts were not resolved.
 - **[Tycho: delayed revert replay](https://github.com/propeller-heads/tycho/pull/1486#issuecomment-6090912403)** — Supplied three-stream staggered-lag tests, a remaining edge-case reproducer, and a candidate cache fix (**upstream PR merged**; that merge does not establish adoption of my candidate cache change).
 
@@ -47,8 +54,6 @@ These are reports and tests contributed to other authors' work, not PRs authored
 
 | Project | My contribution |
 |---|---|
-| [LLVM](https://github.com/llvm/llvm-project/pull/214016#issuecomment-6118429105) | Differential tests and an exact-enumeration witness for near-tie layout selection; no generated-code runtime measurement. |
-| [Kokkos](https://github.com/kokkos/kokkos/pull/9122#issuecomment-6139445264) | ThreadSanitizer race reproduction and CI build-failure diagnosis. |
 | [revm](https://github.com/bluealloy/revm/pull/3833#issuecomment-6090083437) | Nine-case library-level `SELFDESTRUCT` trace comparison. |
 | [vLLM](https://github.com/vllm-project/vllm/issues/52620#issuecomment-6072169935) | Concurrent structured-output comparisons across model-runner configurations. |
 | [cosign](https://github.com/sigstore/cosign/pull/5074#discussion_r4243484217) | A regression test for a caller-supplied signature verifier being bypassed. |
