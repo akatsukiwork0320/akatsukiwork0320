@@ -64,7 +64,7 @@ These are reports and tests contributed to other authors' work, not PRs authored
 |---|---|
 | [revm](https://github.com/bluealloy/revm/pull/3833#issuecomment-6090083437) | Nine-case library-level `SELFDESTRUCT` trace comparison. |
 | [TEMBRI](https://github.com/TLM-Research/tembri/issues/1) | Extracted block-reader probe across four public Xatu partitions showing 11-column vs. 12-column `base_fee_per_gas` schema shift (open issue, awaiting upstream response). |
-| [Arbitrum governance](https://github.com/ArbitrumFoundation/governance/pull/383#issuecomment-6230265688) · [`#384`](https://github.com/ArbitrumFoundation/governance/pull/384#issuecomment-6230268420) | Static source/payload review questions on L1-to-L2 timelock execution path (`#383`) and ArbOS 50 `480,000` batch gas charge calibration across One and Nova (`#384`). |
+| [Arbitrum governance](https://github.com/ArbitrumFoundation/governance/pull/383#issuecomment-6230265688) · [`#384`](https://github.com/ArbitrumFoundation/governance/pull/384#issuecomment-6230268420) | Static source/payload review questions on L1-to-L2 timelock execution path (`#383`) and `480,000` batch gas charge calibration across One and Nova (`#384`). |
 | [vLLM](https://github.com/vllm-project/vllm/issues/52620#issuecomment-6072169935) | Concurrent structured-output comparisons across model-runner configurations. |
 | [cosign](https://github.com/sigstore/cosign/pull/5074#discussion_r4243484217) | A regression test for a caller-supplied signature verifier being bypassed. |
 | [SPIRE](https://github.com/spiffe/spire/pull/7310#discussion_r4235626035) | A cached-SVID regression test after sequential registration updates. |
