@@ -9,7 +9,7 @@
 
 Open to research grants, collaborations, and scoped engineering contracts. Corporate contracting is available through [MIKOTO Co., Ltd.](https://mikoto-style.co.jp/en/).
 
-[Discuss a project](https://mikoto-style.co.jp/en/contact.php) · [Research and evidence](https://mikoto-style.co.jp/en/research/) · [Company GitHub](https://github.com/mikoto0320) · [ORCID](https://orcid.org/0009-0000-9146-6399)
+[Discuss a project](https://mikoto-style.co.jp/en/contact.php) · [Research and evidence](https://mikoto-style.co.jp/en/research/) · [Preprints](PUBLICATIONS.md) · [Company GitHub](https://github.com/mikoto0320) · [ORCID](https://orcid.org/0009-0000-9146-6399)
 
 ## AI safety: selected reports and independent validation
 
@@ -73,6 +73,13 @@ These entries document my contributions to other people’s changes and my bug r
 | [SPIRE](https://github.com/spiffe/spire/pull/7310#discussion_r4235626035) | I reproduced a cached-SVID failure after sequential registration updates and proposed `TestLRUCacheSequentialIDChangeWithoutRenewal`. The [v1.16.0 test suite](https://github.com/spiffe/spire/blob/v1.16.0/pkg/agent/manager/cache/lru_cache_test.go#L1678) includes a test with the same name and update sequence. |
 
 </details>
+
+## Selected research preprints
+
+Research preprints published on Figshare under CC BY 4.0 (not peer reviewed). Complete index of all 11 preprints and 6 companion archives (17 version-pinned DOIs): **[PUBLICATIONS.md](PUBLICATIONS.md)**.
+
+- **[Contract-Indexed State Reduction and Retirement in Audit Machines: A Certificate-Checked RTL Study](https://doi.org/10.6084/m9.figshare.35069368.v2)** (`10.6084/m9.figshare.35069368.v2`, v2, 2026-11-20; 29-page PDF and 68-file supporting archive) — Evaluates contract-preserving finite-state quotients, five-requirement dead-variable register retirement under partial synchronous reset, four RTL state-encoding families under `Yosys 0.33` (`nofsm`), normalized 22-pair equivalence search with `SEC-ic3-sim`, standalone `Certifaiger 10.4.1` + `lrat-trim` 1-step `LRAT` proofs, and a runtime `Yosys`- and SAT-solver-free plaintext acceptance checker across a 72-state reference audit machine, a parameterized slot family, and a fixed small `Gemmini DMACommandTracker` configuration (`nCmds = 2, maxBytes = 3, tag_t = UInt(1.W)`). Conditioned on the declared finite models, pinned tool commits, and timeouts; makes no post-layout commercial ASIC claims, cryptographic zero-knowledge claims, or upstream `Gemmini` bug claims.
+- **[Task-Preserving Operational Processes with Bounded Local Memory](https://doi.org/10.6084/m9.figshare.34020717.v1)** (`10.6084/m9.figshare.34020717.v1`, v1, 2026-09-29; preprint PDF and supporting archive) — Companion theoretical preprint formulating contract-equivalence quotients, 1-step factored correspondence, five-requirement scoped dead-variable retirement, and conditional resident-memory and identifier-width bounds.
 
 ## Reusable research artifacts
 
