@@ -2,13 +2,13 @@
 
 [← Profile overview](README.md) · [Research and evidence](https://mikoto-style.co.jp/en/research/) · [ORCID (`0009-0000-9146-6399`)](https://orcid.org/0009-0000-9146-6399)
 
-All 11 manuscripts listed below are **research preprints published on Figshare and have not undergone peer review**. Each entry cites its **version-pinned DOI** (`.v1` or `.v2`) alongside any bundled or separately deposited reproducibility archives (6 companion items: 5 datasets and 1 software package, for **17 version-pinned DOIs** in total). Preprints and datasets are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); companion software archive `10.6084/m9.figshare.33472249.v1` is licensed under [MIT](https://opensource.org/licenses/MIT). Metadata verified against the public Figshare REST API on 2026-11-20 (UTC).
+All 11 manuscripts listed below are **research preprints published on Figshare and have not undergone peer review**. Each entry cites its **version-pinned DOI** (`.v1`, `.v2`, or `.v3`) alongside any bundled or separately deposited reproducibility archives (6 companion items: 5 datasets and 1 software package, for **17 version-pinned DOIs** in total). Preprints and datasets are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); companion software archive `10.6084/m9.figshare.33472249.v1` is licensed under [MIT](https://opensource.org/licenses/MIT). Metadata verified against the public Figshare REST API on 2026-11-21 (UTC).
 
 ## 1. Stateful Systems, Audit Machines, and Certificate-Checked Hardware Verification
 
-1. **[Contract-Indexed State Reduction and Retirement in Audit Machines: A Certificate-Checked RTL Study](https://doi.org/10.6084/m9.figshare.35069368.v2)**  
-   Version-pinned DOI: [`10.6084/m9.figshare.35069368.v2`](https://doi.org/10.6084/m9.figshare.35069368.v2) · Preprint v2 · Published 2026-11-20 (UTC) · License: CC BY 4.0  
-   Bundled files in item: 29-page preprint PDF (`694,108` bytes) and 68-file standalone supporting archive (`.zip`, `3,794,241` bytes).  
+1. **[Contract-Indexed State Reduction and Retirement in Audit Machines: A Certificate-Checked RTL Study](https://doi.org/10.6084/m9.figshare.35069368.v3)**  
+   Version-pinned DOI: [`10.6084/m9.figshare.35069368.v3`](https://doi.org/10.6084/m9.figshare.35069368.v3) · Preprint v3 · Published 2026-11-21 (UTC) · License: CC BY 4.0  
+   Bundled files in item: 29-page preprint PDF (`697,256` bytes) and 68-file standalone supporting archive (`.zip`, `3,796,623` bytes).  
    *Scope and limits*: Studies how observation interfaces, input-admissibility guards, legal-prefix vs. arbitrary-input environments, and partial synchronous reset determine minimal finite-state quotients, five-requirement dead-variable register retirement, synthesized RTL cost (`Yosys 0.33` with `nofsm`), normalized `SEC-ic3-sim` search cost, `Certifaiger 10.4.1` + `lrat-trim` 1-step `LRAT` certificates, and plaintext commitment checking (`0.017–0.025 s` per bundle on two locked instances) across a 72-state reference machine, a parameterized slot family (`4^n <= 4,096`), and a fixed small `Gemmini DMACommandTracker` configuration (`nCmds = 2, maxBytes = 3, tag_t = UInt(1.W)`). Makes no claims regarding post-layout commercial ASIC area/timing/power, retiming-active circuits, cryptographic zero-knowledge secrecy, or upstream `Gemmini` functional defects.
 
 2. **[Task-Preserving Operational Processes with Bounded Local Memory](https://doi.org/10.6084/m9.figshare.34020717.v1)**  
@@ -60,7 +60,7 @@ All 11 manuscripts listed below are **research preprints published on Figshare a
 
 | Published (UTC) | Item Type | Version-Pinned DOI | Title | License |
 |---|---|---|---|---|
-| 2026-11-20 | Preprint | [`10.6084/m9.figshare.35069368.v2`](https://doi.org/10.6084/m9.figshare.35069368.v2) | Contract-Indexed State Reduction and Retirement in Audit Machines: A Certificate-Checked RTL Study | CC BY 4.0 |
+| 2026-11-21 | Preprint | [`10.6084/m9.figshare.35069368.v3`](https://doi.org/10.6084/m9.figshare.35069368.v3) | Contract-Indexed State Reduction and Retirement in Audit Machines: A Certificate-Checked RTL Study | CC BY 4.0 |
 | 2026-09-29 | Preprint | [`10.6084/m9.figshare.34023840.v1`](https://doi.org/10.6084/m9.figshare.34023840.v1) | Exact memory requirements for retaining path irreversibility in finite Markov systems | CC BY 4.0 |
 | 2026-09-29 | Preprint | [`10.6084/m9.figshare.34020717.v1`](https://doi.org/10.6084/m9.figshare.34020717.v1) | Task-Preserving Operational Processes with Bounded Local Memory | CC BY 4.0 |
 | 2026-09-27 | Preprint | [`10.6084/m9.figshare.34004454.v1`](https://doi.org/10.6084/m9.figshare.34004454.v1) | Finite-time boost-energy flux and switching-work contrast under matched Unruh–DeWitt coupling protocols | CC BY 4.0 |
